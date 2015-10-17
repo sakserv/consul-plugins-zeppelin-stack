@@ -1,0 +1,11 @@
+[plugin]
+name = "zeppelin-view"
+description = ""
+version = "1.0"
+maintainer_name = "SequenceIQ"
+maintainer_email = "info@sequenceiq.com"
+website_url = "https://github.com/sakserv/consul-plugins-zeppelin-view"
+
+[plugin.config]
+
+[plugin.compatibility]

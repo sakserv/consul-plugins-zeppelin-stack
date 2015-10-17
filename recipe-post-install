@@ -1,0 +1,27 @@
+: ${LOGFILE:=/tmp/zeppelin_stack.log}
+: ${DEBUG:=1}
+
+
+main(){
+
+  view_git=https://github.com/hortonworks-gallery/ambari-zeppelin-service.git
+  view_path=/var/lib/ambari-server/resources/stacks/HDP/2.3/services/ZEPPELIN
+
+  debug "Install git"
+  yum install git -y
+
+  if [ -d $view_path ]; then
+    debug "Zeppelin stack already exists at $view_path"
+  else 
+    debug "Installing the Zeppelin view"
+    git clone $view_git $view_path
+    service ambari-server restart
+  fi
+
+}
+
+debug(){
+  [[ "$DEBUG" ]] && echo "[DEBUG] $*" >> $LOGFILE
+}
+
+[[ "$0" == "$BASH_SOURCE" ]] && main "$@"

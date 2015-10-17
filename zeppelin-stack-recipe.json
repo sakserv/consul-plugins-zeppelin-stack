@@ -1,0 +1,9 @@
+{
+  "name": "zeppelin-stack-recipe",
+  "description": "",
+  "properties": {
+  },
+  "plugins": {
+      "https://github.com/sakserv/consul-plugins-zeppelin-stack.git": "ONE_NODE"
+  }
+}
